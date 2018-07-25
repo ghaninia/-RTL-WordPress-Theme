@@ -14,4 +14,33 @@
         </section>
     <?php endwhile; ?>
 <?php endif; ?>
+
+    <!-- Paging -->
+    <section class="pagination">
+        <nav class="container">
+                <?php
+                    $nextPost = get_next_post();
+                    $link = get_permalink($nextPost->ID);
+                    $title = $nextPost->post_title;
+                    if ( isset($link,$title) )
+                    {
+                        printf('<a class="extend prev" rel="prev" href="%s"><i><-</i>' , $link ) ;
+                        printf('<span>%s</span></a>' , $title ) ;
+                    }
+                ?>
+
+                <?php
+                    $prevPost = get_previous_post();
+                    $link = get_permalink($prevPost->ID);
+                    $title = $prevPost->post_title;
+                    if ( isset($link,$title) )
+                    {
+                        printf('<a class="extend next" rel="next" href="%s"><i>-></i>' , $link ) ;
+                        printf('<span>%s</span></a>' , $title ) ;
+                    }
+                ?>
+        </nav>
+    </section>
+    <!-- /Paging -->
+
 <?php get_footer() ;?>
