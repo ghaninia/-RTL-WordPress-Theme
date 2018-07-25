@@ -72,7 +72,9 @@ html {
     font: 16px/1.618 Anonymous Pro;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizelegibility
+    text-rendering: optimizelegibility ;
+    /*letter-spacing: -1px;*/
+    word-spacing: -0.2rem ;
 }
 
 @media (max-width:44rem) {

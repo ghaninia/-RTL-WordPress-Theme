@@ -13,8 +13,7 @@ add_action( 'init', 'register_my_menus' );
 function register_my_menus() {
     register_nav_menus(
         array(
-            'header-menu' => __( 'فهرست سربرگ' ),
-            'footer-menu' => __( 'فهرست پابرگ' )
+            'header-menu' => __( 'فهرست سربرگ' )
         )
     );
 }

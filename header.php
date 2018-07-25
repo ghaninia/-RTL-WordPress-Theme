@@ -43,12 +43,12 @@
                 <a href="<?php bloginfo('url'); ?>" class="logo"><?php bloginfo('name') ;?></a>
             </h1>
             <?php wp_nav_menu( array(
-                    'menu'              => 'header-menu',
-                    'theme_location'    => 'header-menu',
-                    'depth'             => 1 ,
-                    'container'         => false,
-                    'fallback_cb'       => 'customWalker::fallback',
-                    'walker'            => new customWalker())
+                'menu'              => 'header-menu',
+                'theme_location'    => 'header-menu',
+                'depth'             => 1 ,
+                'container'         => false,
+                'fallback_cb'       => 'customWalker::fallback',
+                'walker'            => new customWalker())
             ); ?>
         </nav>
     </section>
