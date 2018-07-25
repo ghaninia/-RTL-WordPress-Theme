@@ -1,11 +1,12 @@
 <footer>
     <section class="container">
         <div class="delimiter">
-            <a href="/" class="logo">
-                <img src="/static/theme/sallar/img/logo.svg">
+            <a href="<?php bloginfo('url'); ?>" class="logo">
+                <img src="">
             </a>
         </div>
         <p>
+            <?= Ycopyright(); ?>
             <br>
 
         </p>
