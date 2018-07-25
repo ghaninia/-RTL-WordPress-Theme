@@ -22,6 +22,8 @@
     <meta property="og:url" content="<?php bloginfo('url'); ?>">
     <meta property="og:site_name" content="<?php bloginfo('name') ;?>">
     <meta property="og:description" content="<?php bloginfo('description'); ?>">
+
+    <!-- twitter -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="<?php bloginfo('name') ;?>">
     <meta name="twitter:description" content="<?php bloginfo('description'); ?>">
@@ -40,7 +42,14 @@
             <h1>
                 <a href="<?php bloginfo('url'); ?>" class="logo"><?php bloginfo('name') ;?></a>
             </h1>
-            <?php wp_nav_menu(); ?>
+            <?php wp_nav_menu( array(
+                    'menu'              => 'header-menu',
+                    'theme_location'    => 'header-menu',
+                    'depth'             => 1 ,
+                    'container'         => false,
+                    'fallback_cb'       => 'customWalker::fallback',
+                    'walker'            => new customWalker())
+            ); ?>
         </nav>
     </section>
 </header>
