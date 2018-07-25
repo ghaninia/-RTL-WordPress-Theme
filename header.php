@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="farsi" <?php language_attributes(); ?>>
 <head>
-    <title>
-        <?php
+    <title><?php
             if (is_home ()) {
                 bloginfo('name');
             }elseif (is_category()) {
@@ -13,8 +12,7 @@
                 bloginfo('name'); echo ' : ';single_post_title();
             }else {
                 wp_title(' ',true);
-            } ?>
-    </title>
+            } ?></title>
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
     <meta name="description" content="<?php bloginfo('description'); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,3 +32,16 @@
 
 </head>
 <body <?php body_class( 'body' ); ?>>
+
+<!-- Header -->
+<header>
+    <section class="container">
+        <nav>
+            <h1>
+                <a href="<?php bloginfo('url'); ?>" class="logo"><?php bloginfo('name') ;?></a>
+            </h1>
+            <?php wp_nav_menu(); ?>
+        </nav>
+    </section>
+</header>
+<!-- /Header -->
