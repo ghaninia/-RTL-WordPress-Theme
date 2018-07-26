@@ -15,6 +15,13 @@ $options = [
         'id'   => sprintf("%slogo" , $prefix ) ,
         'desc' => 'لوگو سایت را وارد نمایید' ,
         'std'  => get_template_directory_uri() .'/images/logo.svg'
+    ],
+    [
+        'name' => 'ico' ,
+        'type' => 'file' ,
+        'id'   => sprintf("%sico" , $prefix ) ,
+        'desc' => 'شورت آیکون سایت را وارد نمایید' ,
+        'std'  => get_template_directory_uri() .'/images/logo.ico'
     ]
 ];
 
