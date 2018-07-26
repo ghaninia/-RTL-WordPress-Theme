@@ -27,7 +27,9 @@ function Ycopyright() {
     if($copyright_dates) {
         $copyright = mysql2date( "Y" , $copyright_dates[0]->firstdate ) ;
         if($copyright_dates[0]->firstdate != $copyright_dates[0]->lastdate ) {
-            $copyright .= '-' . mysql2date( "Y" , $copyright_dates[0]->lastdate );
+			$last = mysql2date( "Y" , $copyright_dates[0]->lastdate ) ;
+            if($last != $copyright)
+				$copyright .= '-' . $last ;
         }
         $output = $copyright;
     }
