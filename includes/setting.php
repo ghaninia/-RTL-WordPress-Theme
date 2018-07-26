@@ -14,7 +14,7 @@ $options = [
         'type' => 'file' ,
         'id'   => sprintf("%slogo" , $prefix ) ,
         'desc' => 'لوگو سایت را وارد نمایید' ,
-        'std'  => 'images/logo.svg'
+        'std'  => get_template_directory_uri() .'/images/logo.svg'
     ]
 ];
 
@@ -60,20 +60,23 @@ function viewoption(){
             echo '<table class="form-table">' ;
                 echo '<tbody>' ;
                     foreach ($options as $item) {
-                        switch ($item['type']){
-                            case "textarea" : {
-                                break;
+                        $value = get_settings( $item['id']) == false ? $item['std'] : get_settings( $item['id']) ;
+                        echo '<tr>';
+                            printf('<th scope="row"><label for="%s">%s</label></th>' , $item['name'] , $item['desc'] ) ;
+                            echo '<td>' ;
+                            switch ($item['type']){
+                                case "textarea" : {
+                                    printf('<textarea name="%s" id="%s" class="regular-text">%s</textarea>' , $item['id'] , $item['name'] , $value ) ;
+                                    break;
+                                }
+                                case "file" : {
+                                    printf('<input readonly name="%s"  type="url" id="%s" value="%s" class="regular-text">' , $item['id'] , $item['name'] , $value ) ;
+                                    printf('<input accept="image/*" type="button" id="upload-btn" class="button-secondary" value="Upload Image">');
+                                    break ;
+                                }
                             }
-                            case "file" : {
-                                echo '<tr>';
-                                    printf('<th scope="row"><label for="%s">%s</label></th>' , $item['name'] , $item['desc'] ) ;
-                                    echo '<td>' ;
-                                        printf('<input readonly name="%s"  type="url" id="%s" value="%s" class="regular-text">' , $item['id'] , $item['name'] , $item['std'] ) ;
-                                        printf('<input type="button" id="upload-btn" class="button-secondary" value="Upload Image">');
-                                    echo '</td>' ;
-                                echo '</tr>' ;
-                            }
-                        }
+                            echo '</td>' ;
+                        echo '</tr>' ;
                     }
                 echo '</tbody>' ;
             echo '</table>' ;
@@ -81,4 +84,21 @@ function viewoption(){
             printf('<input type="hidden" name="action" value="save" /></p>');
         printf('</form>');
     echo "</div>" ;
+}
+
+function themeOption($key)
+{
+    global $options , $prefix;
+    $key = $prefix.$key  ;
+    $option = get_settings($key) ;
+    if ($option == false)
+    {
+        foreach ($options as $item)
+        {
+            if ($item['id'] == $key )
+                return isset($item['std']) ? $item['std'] : "" ;
+        }
+        return "" ;
+    }
+    return $option ;
 }
