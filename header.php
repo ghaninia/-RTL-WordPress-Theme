@@ -31,7 +31,10 @@
     <link rel="alternate" href="/atom.xml" title="<?php bloginfo('name') ;?>" type="application/atom+xml">
     <link rel="short icon" href="">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css">
-
+    <link rel="stylesheet" href="<?= asset('libs/highlight/styles/default.css') ;?>">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="<?= asset('libs/highlight/highlight.pack.js') ;?>"></script>
+    <script src="<?= asset('js/theme.js') ;?>"></script>
 </head>
 <body <?php body_class( 'body' ); ?>>
 

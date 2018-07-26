@@ -12,3 +12,4 @@
         </p>
     </section>
 </footer>
+<?php wp_footer(); ?>

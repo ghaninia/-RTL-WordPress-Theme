@@ -1,11 +1,12 @@
 <?php
 
 require_once "includes/Walker.php" ;
+require_once "includes/setting.php" ;
 
 ///* URL افزودن ASSET  *///
 
 function asset($url){
-    return sprintf("%s%s", bloginfo('get_template_url') , $url );
+    return sprintf("/%s%s", bloginfo('template_directory') , $url );
 }
 
 ///* اضافه کردن فهرست *///
