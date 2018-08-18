@@ -2,7 +2,7 @@
 
 require_once "includes/Walker.php" ;
 require_once "includes/setting.php" ;
-
+require_once "includes/sample.php" ;
 ///* URL افزودن ASSET  *///
 
 function asset($url){

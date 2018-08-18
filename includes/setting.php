@@ -1,6 +1,5 @@
 <?php
 $prefix = "option_" ;
-$optionName = "ویرایش پوسته" ;
 $options = [
     [
         'name' => 'copyright' ,
@@ -24,9 +23,11 @@ $options = [
         'std'  => get_template_directory_uri() .'/images/logo.ico'
     ]
 ];
-
 function optionverb() {
-    global $themename, $options , $optionName;
+
+    global $themename, $options ;
+    $optionName = "ویرایش پوسته" ;
+
     $currentPage = $_SERVER['REQUEST_URI'] ;
     if ( $_GET['page'] == basename(__FILE__) ) {
         if ( 'save' == $_REQUEST['action'] ) {
