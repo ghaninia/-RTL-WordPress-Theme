@@ -1,3 +1,3 @@
 # RTL-WordPress-Theme
 
-Demo : <a href="ghaninia.ir">Ghaninia.ir</a>
+Template a mini wordpress theme peoject with user dashboardoptions 
